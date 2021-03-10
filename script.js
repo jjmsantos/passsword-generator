@@ -116,6 +116,7 @@ function generatePassword() {
 
   //initiate randomly generated password
   var finalPassword = "";
+  
   for (var i = 0; i < genLength; i++) {
     finalPassword += passwordString[Math.floor(Math.random() * passwordString.length)];
     console.log(finalPassword);
@@ -125,9 +126,6 @@ function generatePassword() {
 
 }
 
-/*END OF FUNCTIONS*/
-
-
 
 function writePassword() {
   var password = generatePassword();
@@ -135,6 +133,9 @@ function writePassword() {
   
   passwordText.value = password;
 }
+
+/*END OF FUNCTIONS*/
+
 
 //On click, call generatePassword
 generateBtn.addEventListener("click", writePassword);
