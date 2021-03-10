@@ -28,6 +28,7 @@ var number = "0123456789";
 var special = "!@#$%^&*()_+-={}[]:;<,>.?/'\"|\\";
 
 
+
 /*END OF GLOBAL VARIABLES*/
 
 
@@ -64,48 +65,48 @@ function generatePassword() {
     }
   }
 
-  //Pass all true parameters into object
-  var passwordObject = [""];
+  //Pass all true parameters into string
+  var passwordString = [];
 
-  //check if includeLower will pass to passwordOject oject
+  //check if includeLower will pass to passwordString string
   var includeLower = lower.split("");
 
   if (needLower === true) {
-    passwordObject = passwordObject.concat(includeLower);
+    passwordString = passwordString.concat(includeLower);
     console.log("Lowercase to be included");
   }
   else{
     console.log("Lowercase will not be included");
   }
 
-  //check if includeUpper will pass to passwordObject object
+  //check if includeUpper will pass to passwordString string
   var includeUpper = upper.split("");
 
   if (needUpper === true) {
-    passwordObject = passwordObject.concat(includeUpper);
+    passwordString = passwordString.concat(includeUpper);
     console.log("Uppercase letters to be included");
   }
   else {
     console.log("Uppercase letter will not be included");
   }
 
-   //check if includeNumber will pass to passwordObject object
+   //check if includeNumber will pass to passwordString object
    var includeNumber = number.split("");
 
    if (needNumber === true) {
-    passwordObject = passwordObject.concat(includeNumber);
+    passwordString = passwordString.concat(includeNumber);
     console.log("Numbers to be included");
   }
   else {
     console.log("Numbers will not be included");
-    console.log("String that password will generate from " + passwordObject);
+    console.log("String that password will generate from " + passwordString);
   }
 
- //check if includeSpecial will pass to passwordObject object
+ //check if includeSpecial will pass to passwordString object
  var includeSpecial = special.split("");
 
  if (needSpecial === true) {
-  passwordObject = passwordObject.concat(includeSpecial);
+  passwordString = passwordString.concat(includeSpecial);
   console.log("Special characters to be included");
   }
   else {
@@ -114,8 +115,9 @@ function generatePassword() {
 
   //initiate randomly generated password
   for (var i = 0; i < genLength; i++) {
-    var finalPassword = finalPassword + passwordObject[Math.floor(Math.random() * passwordObject.length)];
+    var finalPassword = finalPassword + passwordString[Math.floor(Math.random() * passwordString.length)];
     console.log(finalPassword);
+
   }
   return finalPassword;
 
