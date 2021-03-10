@@ -113,9 +113,11 @@ function generatePassword() {
   console.log("Special characters will not be included");
   }
 
+
   //initiate randomly generated password
+  var finalPassword = "";
   for (var i = 0; i < genLength; i++) {
-    var finalPassword = finalPassword + passwordString[Math.floor(Math.random() * passwordString.length)];
+    finalPassword += passwordString[Math.floor(Math.random() * passwordString.length)];
     console.log(finalPassword);
 
   }
